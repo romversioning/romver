@@ -35,7 +35,7 @@ This document will probably have minor changes in the future. Alternative name f
 About
 -----
 
-The Romatntic Versioning specification is authored by [Daniel V from the Kegacy Blog crew](http://blog.legacyteam.info/2015/12/romver-romantic-versioning/) in 2015. This open and public repository has the task of maintenance and visibility, cooperation for others.
+The Romatntic Versioning specification is authored by [Daniel V from the Legacy Blog crew](http://blog.legacyteam.info/2015/12/romver-romantic-versioning/) in 2015. This open and public repository has the task of maintenance and visibility, cooperation for others.
 
 If you'd like to leave feedback, please [open an issue on
 GitHub](https://github.com/romversioning/romver/issues).

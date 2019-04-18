@@ -21,7 +21,7 @@ all team members (see below) to merge.
 
 ## The RomVer Team
 
-The first idea and the initial document about this versioning is from [Daniel V from the Kegacy Blog crew](http://blog.legacyteam.info/2015/12/romver-romantic-versioning/) in 2015.
+The first idea and the initial document about this versioning is from [Daniel V from the Legacy Blog crew](http://blog.legacyteam.info/2015/12/romver-romantic-versioning/) in 2015.
 
 We welcome feedback from anyone on the direction of RomVer. However, a group of people, "the RomVer team," are responsible for making decisions about RFC PRs. The RomVer team is made up of representatives from package managers that use RomVer. 
 
