@@ -5,7 +5,7 @@
 You are given a version number HUMAN . MAJOR . MINOR,  increment the:
 
 1. HUMAN version when you make any conceptual change, major rewrite, major documentation change, or any other change which requires additional HUMAN involvement.
-2. MAJOR  version when you make incompatible API changes,
+2. MAJOR version when you make incompatible API changes.
 3. MINOR version when you add functionality in a backward-compatible manner or fix with backward-compatible bug fixes.
 
 Additional labels for pre-release and build metadata are available as extensions to the HUMAN . MAJOR . MINOR format.
@@ -25,7 +25,7 @@ This document will probably have minor changes in the future. An alternative nam
 3. Once a versioned package has been released, the contents of that version MUST NOT be modified. Any modifications MUST be released as a new version.
 4. Human version zero (0.y.z) is for initial development. Anything may change at any time. The public API should be considered something other than stable.
 5. Version 1.0.0 defines the public API. The way the version number is incremented after this release depends on this public API and how it changes.
-6. Minor version Z (x.y.Z | Z > 0) MUST be incremented if backward-compatible bug fixes (internal change that fixes incorrect behavior) are introduced or of new backward-compatible functionality is introduced to the public API.
+6. Minor version Z (x.y.Z | Z > 0) MUST be incremented if backward-compatible bug fixes (internal change that fixes incorrect behavior) are introduced or if new backward-compatible functionality is introduced to the public API.
 7. Major version Y (x.Y.z | Y > 0) MUST be incremented if any backward-incompatible changes are introduced to the public API. It MUST be incremented if any public API functionality is marked as deprecated. It MAY be incremented if substantial new functionality or improvements are introduced within the private code. It MAY include minor level changes. The minor version MUST be reset to 0 when the major version is incremented.
 8. Human version X (X.y.z | X > 0) MAY be incremented if any conceptual or backward incompatible change is introduced to the public API. It MAY include major and minor level changes. Major and minor versions MUST be reset to 0 when the human version is incremented.
 9. A pre-release version MAY be denoted by appending a hyphen, and a series of dot-separated identifiers immediately following the minor version. Identifiers MUST comprise only ASCII alphanumerics and hyphens [0-9A-Za-z-]. Identifiers MUST NOT be empty. Numeric identifiers MUST NOT include leading zeroes. Pre-release versions have a lower precedence than the associated normal version. A pre-release version indicates that the version is unstable and might not satisfy the intended compatibility requirements as denoted by its associated normal version.<br>
