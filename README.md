@@ -42,7 +42,7 @@ Example: 1.0.0-alpha < 1.0.0-alpha.1 < 1.0.0-alpha.beta < 1.0.0-beta < 1.0.0-bet
 About
 -----
 
-The Romantic Versioning specification was authored by [Daniel V from the Legacy Blog crew](http://blog.legacyteam.info/2015/12/romver-romantic-versioning/) in 2015. This open and public repository has the task of maintenance and visibility, cooperation with others.
+The Romantic Versioning specification was authored by [Daniel V from the Legacy Blog crew](https://web.archive.org/web/20221003075344/) in 2015 (The page is not longer available, so the link leads to the last time stamp of the web archive.). This open and public repository has the task of maintenance and visibility, cooperation with others.
 
 If you'd like to leave feedback, please [open an issue on
 GitHub](https://github.com/romversioning/romver/issues).
