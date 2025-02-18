@@ -51,5 +51,5 @@ GitHub](https://github.com/romversioning/romver/issues).
 License
 -------
 
-Creative Commons - CC BY 3.0
-http://creativecommons.org/licenses/by/3.0/
+Creative Commons - CC BY 4.0
+[http://creativecommons.org/licenses/by/3.0/](https://creativecommons.org/licenses/by/4.0/)
