@@ -1,3 +1,9 @@
+# Frequently Asked Questions
+
+## Table of Content
+* [Romantic Versioning](README.md)
+* [FAQ](FAQ.md)
+
 ## How is this different to Sentimental Versioning?
 
 [Sentimental Versioning?](https://github.com/dominictarr/sentimental-versioning)
