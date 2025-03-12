@@ -1,6 +1,6 @@
 # Frequently Asked Questions
 
-## Table of Content
+## Table of contents
 * [Romantic Versioning](README.md)
 * [FAQ](FAQ.md)
 
