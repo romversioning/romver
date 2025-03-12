@@ -1,5 +1,9 @@
 # RomVer – Romantic Versioning
 
+## Table of Content
+* [Romantic Versioning](README.md)
+* [FAQ](FAQ.md)
+
 ## Summary
 
 You are given a version number HUMAN . MAJOR . MINOR,  increment the:
