@@ -1,11 +1,6 @@
 # RomVer – Romantic Versioning
 
-## Table of Contents
-* [Romantic Versioning](README.md)
-* [FAQ](FAQ.md)
-* [License](https://creativecommons.org/licenses/by/4.0/)
-
-## Summary
+## Spec Summary
 
 Version numbers are defined as `"HUMAN.MAJOR.MINOR"`, where you increment the:
 
@@ -17,9 +12,15 @@ Additional labels for pre-release and build metadata are available as extensions
 
 ## Introduction
 
-This is an alternative to the [SemVer](https://semver.org/) spec which focuses on defining and standardizing the way that many large-scale software projects (e.g. Node, Rails, PHP, jQuery, NPM, Linux Kernel, and many more) handle version numbers.
+This is an alternative to the [SemVer](https://semver.org/) format, focusing instead on defining and standardizing version numbers based off the ways in which people naturally treat them. Many large and popular projects (e.g. Node, Rails, PHP, jQuery, NPM, the Linux Kernel, and many more) deny using SemVer for various reasons, all of which can be traced back to human intuition. This standard attempts to work with intuition instead of overriding it.
 
 The Romantic Versioning specification was originally authored by [Daniel V](https://web.archive.org/web/20221003075344/http://blog.legacyteam.info/2015/12/romver-romantic-versioning/) in 2015, and this open and public repository has the task of maintaining, extending, polishing, and popularizing this standard. If you'd like to leave feedback, please [open an issue on GitHub](https://github.com/romversioning/romver/issues).
+
+## Links
+* [License](https://creativecommons.org/licenses/by/4.0/)
+* [FAQ](FAQ.md)
+* [Contributing](CONTRIBUTING.md)
+* [Code of Conduct](CODE_OF_CONDUCT.md)
 
 ## Romantic Versioning Specification (RomVer)
 
