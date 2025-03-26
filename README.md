@@ -1,4 +1,4 @@
-# RomVer – Romantic Versioning
+# Romantic Versioning (RomVer)
 
 ## Spec Summary
 
@@ -12,9 +12,25 @@ Additional labels for pre-release and build metadata are available as extensions
 
 ## Introduction
 
-This is an alternative to the [SemVer](https://semver.org/) format, focusing instead on defining and standardizing version numbers based off the ways in which people naturally treat them. Many large and popular projects (e.g. Node, Rails, PHP, jQuery, NPM, the Linux Kernel, and many more) deny using SemVer for various reasons, all of which can be traced back to human intuition. This standard attempts to work with intuition instead of overriding it.
+This is an alternative to the [SemVer](https://semver.org/) format, focusing instead on defining and standardizing version numbers based off the ways in which people naturally treat them. Many large and popular projects (e.g. Node, Rails, PHP, jQuery, NPM, the Linux Kernel, and many more) deny using SemVer and instead opt to just base their versions off intuition. RomVer acknowledges the importance of intuition regarding version numbers and attempts to standardize versions in a way that is both extremely intuitive and extremely useful.
 
 The Romantic Versioning specification was originally authored by [Daniel V](https://web.archive.org/web/20221003075344/http://blog.legacyteam.info/2015/12/romver-romantic-versioning/) in 2015, and this open and public repository has the task of maintaining, extending, polishing, and popularizing this standard. If you'd like to leave feedback, please [open an issue on GitHub](https://github.com/romversioning/romver/issues).
+
+## Why was this made?
+
+This was made to fix the confusion that SemVer often creates regarding MAJOR changes. When a project releases a v2.0, people don't automatically think of it as a simple breaking change as they should, they think of it as being an extremely big deal. And conversely, when a project releases a v54.0, people don't automatically think of it as a simple breaking change as they should, they think of it as another small and tedious step that isn't noteworthy.
+
+For whatever reason, humans seem to naturally put a lot of personal attachment in the first number of a version, and this standard attempts to work with that fact instead of overriding it. 
+
+## Why should this be used?
+
+- Users (including developers) are less confused and are quicker to pick up on the importance of version changes (as described above).
+- It conveys more information to users
+- - The MINOR and PATCH segments in SemVer are both backwards-compatible, so they're identical when it comes to whether or not users should update. Here, they're combined into a single segment.
+- - The PROJECT and MAJOR segments denote differing levels of breaking changes, with MAJOR increments likely being easy to update to and PROJECT increments likely being not easy to update to.
+- It is compatible with systems that expect SemVer. This mainly uses three numerical segments, which makes it compatible with essentially every system that takes a version number, plus there are rules for how to compact a more complex version to just three integers.
+- (Extra) The specification is barely even needed since it basically just states what people already expect when looking at the three numbers.
+- (Extra) You don't have to do something crazy like "Project v2 v0.1.0" if you want to radically transform your project.
 
 ## Links
 * [License](https://creativecommons.org/licenses/by/4.0/)
@@ -45,5 +61,4 @@ Example: 1.0.0-alpha < 1.0.0-alpha.1 < 1.0.0-alpha.beta < 1.0.0-beta < 1.0.0-bet
 
 ## License
 
-Creative Commons - CC BY 4.0
-[http://creativecommons.org/licenses/by/3.0/](https://creativecommons.org/licenses/by/4.0/)
+[Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/)
