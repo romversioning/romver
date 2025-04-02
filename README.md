@@ -2,6 +2,11 @@
 
 ## Spec Summary
 
+![Diagram with a version number: 2.25.123
+First "2" is commented: Human
+Second "25" is commented: Major
+Third "123" is commented: Minor](./romvers.png)
+
 Version numbers are defined as `"HUMAN.MAJOR.MINOR"`, where you increment the:
 
 1. `HUMAN` segment when you make any conceptual change, major rewrite, major documentation change, or any other change which requires additional HUMAN involvement.
