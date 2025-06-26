@@ -7,7 +7,9 @@ First "2" is commented: Project
 Second "25" is commented: Major
 Third "123" is commented: Minor](./romvers.png)
 
-Version numbers are defined as `"PROJECT.MAJOR.MINOR"`, where you increment the:
+---
+
+Version numbers are defined as `PROJECT.MAJOR.MINOR`, where you increment the:
 
 1. `PROJECT` segment when you want the version to be considered a new, separate project (e.g. Sdl 2.28 to Sdl 3.0).
 2. `MAJOR` segment when you make breaking changes.
@@ -17,7 +19,7 @@ Additional labels for pre-release and build metadata are available as extensions
 
 ## Introduction
 
-This is an alternative to the [SemVer](https://semver.org/) format, focusing instead on defining and standardizing version numbers based off the ways in which people naturally treat them. Many large and popular projects (e.g. Node, Rails, PHP, jQuery, NPM, the Linux Kernel, and many more) deny using SemVer and instead opt to just base their versions off intuition. RomVer acknowledges the importance of intuition regarding version numbers and attempts to standardize versions in a way that is both extremely intuitive and extremely useful.
+This is an alternative to the [SemVer](https://semver.org/) format, focusing instead on defining and standardizing version numbers based off the ways in which people naturally treat them. Many large and popular projects (e.g. Node, Rails, PHP, jQuery, NPM, the Linux Kernel, and many more) deny using SemVer and instead opt to just base their versions off intuition. RomVer acknowledges the importance of this intuition and attempts to standardize version numbers in a way that is both extremely intuitive and extremely useful.
 
 The Romantic Versioning specification was originally authored by [Daniel V](https://web.archive.org/web/20221003075344/http://blog.legacyteam.info/2015/12/romver-romantic-versioning/) in 2015, and this open and public repository has the task of maintaining, extending, polishing, and popularizing this standard. If you'd like to leave feedback, please [open an issue on GitHub](https://github.com/romversioning/romver/issues).
 
@@ -33,7 +35,7 @@ For whatever reason, humans seem to naturally put a lot of personal attachment i
 - It conveys more information to users
 - - The MINOR and PATCH segments in SemVer are both backwards-compatible, so they're identical when it comes to whether or not users should update. Here, they're combined into a single segment.
 - - The PROJECT and MAJOR segments denote differing levels of breaking changes, with MAJOR increments likely being easy to update to and PROJECT increments likely being not easy to update to.
-- It is compatible with systems that expect SemVer. This mainly uses three numerical segments, which makes it compatible with essentially every system that takes a version number, plus there are rules for how to compact a more complex version to just three integers.
+- It is compatible with systems that expect SemVer.
 - (Extra) The specification is barely even needed since it basically just states what people already expect when looking at the three numbers.
 - (Extra) You don't have to do something crazy like "Project v2 v0.1.0" if you want to radically transform your project.
 
@@ -43,26 +45,23 @@ For whatever reason, humans seem to naturally put a lot of personal attachment i
 * [Contributing](CONTRIBUTING.md)
 * [Code of Conduct](CODE_OF_CONDUCT.md)
 
-## Romantic Versioning Specification (RomVer)
+## Romantic Versioning Specification
 
-1. Software using Romantic Versioning must declare a public API. This API could be declared in the code itself or exist strictly in documentation. However it is done, it should be precise and comprehensive.
-2. A normal version number must take the form X.Y.Z where X, Y, and Z are non-negative integers and must not contain leading zeroes. X is the project version, Y is the major version, and Z is the minor version. Each element must increase numerically. For instance: 1.9.0 -> 1.10.0 -> 1.11.0.
-3. Once a versioned package has been released, the contents of that version must not be modified. Any modifications must be released as a new version.
-4. Project version zero (0.y.z) is for initial development. Anything may change at any time. The public API should be considered something other than stable.
-5. Version 1.0.0 defines the public API. The way the version number is incremented after this release depends on this public API and how it changes.
-6. Minor version Z (x.y.Z | Z > 0) must be incremented if backward-compatible bug fixes (internal change that fixes incorrect behavior) are introduced or if new backward-compatible functionality is introduced to the public API.
-7. Major version Y (x.Y.z | Y > 0) must be incremented if any backward-incompatible changes are introduced to the public API. It must be incremented if any public API functionality is marked as deprecated. It may be incremented if substantial new functionality or improvements are introduced within the private code. It may include minor level changes. The minor version must be reset to 0 when the major version is incremented.
-8. Project version X (X.y.z | X > 0) may be incremented if the new version is to be considered as a separate project from older versions. It may include major and minor level changes. Major and minor versions must be reset to 0 when the project version is incremented.
-9. A pre-release version may be denoted by appending a hyphen, and a series of dot-separated identifiers immediately following the minor version. Identifiers must comprise only ASCII alphanumerics and hyphens [0-9A-Za-z-]. Identifiers must not be empty. Numeric identifiers must not include leading zeroes. Pre-release versions have a lower precedence than the associated normal version. A pre-release version indicates that the version is unstable and might not satisfy the intended compatibility requirements as denoted by its associated normal version.<br>
+If a software project wishes to use Romantic Versioning, it must follow these rules:
+1. Version numbers must take the form `PROJECT.MAJOR.MINOR[-PRE][+BUILD]` where PROJECT, MAJOR, and MINOR are non-negative integers with no leading zeroes, and PRE and BUILD are optional identifiers composed only of ASCII alphanumerics, hyphens, and dots.
+2. Once a release of the project is publicly available, its contents must never be modified. Any necessary modifications must be issued as a new release.
+3. If a release contains a public API, said API must be precisely and comprehensively documented.
+4. Project version zero (0.*.*) must be used for initial development, where the project is marked as not stable.
+5. Each release's version number must be based off its predecessor's version number and must be changed according to the next three rules.
+6. If the release is to be considered as a separate project from older releases, or if the project is now marked as stable, the PROJECT identifier must be incremented and the MAJOR and MINOR identifiers must be set to 0.
+7. Otherwise, if the release is not backwards compatible with its predecessor, or if some of the release's public API is now marked as deprecated, the MAJOR identifier must be incremented and the MINOR identifier must be set to 0.
+8. Otherwise, the MINOR identifier must be incremented.
+9. A pre-release version may be denoted by appending immediately following the MINOR identifier a hyphen and any ASCII string composed only of alphanumerics, dots, and hyphens. Pre-release identifiers, if included, must not be empty, and pre-release version numbers must only be issued for releases which are unstable previews for future releases.<br>
 Examples: 1.0.0-alpha, 1.0.0-alpha.1, 1.0.0-0.3.7, 1.0.0-x.7.z.92.
-10. Build metadata may be denoted by appending a plus sign and a series of dot-separated identifiers immediately following the minor or pre-release version. Identifiers must comprise only ASCII alphanumerics and hyphens [0-9A-Za-z-]. Identifiers must not be empty. Build metadata should be ignored when determining version precedence. Thus two versions that differ only in the build metadata, have the same precedence.<br>
+10. Build metadata may be denoted by appending immediately following the pre-release identifier (or otherwise the MINOR identifier) a plus sign and any ASCII string composed only of alphanumerics, dots, and hyphens. Build metadata identifiers, if included, must not be empty, and version numbers containing build metadata must only be issued for copies of the software project included within a release, and not for a release itself.<br>
 Examples: 1.0.0-alpha+001, 1.0.0+20130313144700, 1.0.0-beta+exp.sha.5114f85.
-11. Precedence refers to how versions are compared when ordered. Precedence must be calculated by separating the version into the project, major, minor, and pre-release identifiers in that order (Build metadata does not figure into precedence). Precedence is determined by the first difference when comparing each of these identifiers from left to right as follows: Project, major, and minor versions are always compared numerically.<br>
-Example: 1.0.0 < 2.0.0 < 2.1.0 < 2.1.1.<br>
-When project, major, and minor are equal, a pre-release version has lower precedence than a normal version.<br>
-Example: 1.0.0-alpha < 1.0.0.<br>
-Precedence for two pre-release versions with the same project, major, and minor version must be determined by comparing each dot separated identifier from left to right until a difference is found as follows: identifiers consisting of only digits are compared numerically and identifiers with letters or hyphens are compared lexically in ASCII sort order. Numeric identifiers always have lower precedence than non-numeric identifiers. A larger set of pre-release fields has a higher precedence than a smaller set if all of the preceding identifiers are equal.<br>
-Example: 1.0.0-alpha < 1.0.0-alpha.1 < 1.0.0-alpha.beta < 1.0.0-beta < 1.0.0-beta.2 < 1.0.0-beta.11 < 1.0.0-rc.1 < 1.0.0.
+11. Precedence refers to how versions are compared when ordered, which must be computed by comparing the PROJECT identifiers if they differ, otherwise by comparing the MAJOR identifiers if the differ, otherwise by comparing the MINOR identifiers if they differ, otherwise by comparing the release dates of the pre-release identifiers if they differ, otherwise the version numbers are considered identical. The presence (or lack thereof) of build metadata identifiers does not affect precedence, and pre-release version numbers have lower precedence than non-pre-release version numbers.<br>
+Example: 1.0.0 < 2.0.0 < 2.1.0 < 2.1.1 < 2.1.2-rc.1 < 2.1.2-rc2 < 2.1.2.<br>
 
 ## License
 
